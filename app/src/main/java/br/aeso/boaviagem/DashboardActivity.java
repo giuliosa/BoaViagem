@@ -1,7 +1,8 @@
 package br.aeso.boaviagem;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +39,15 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.dashbord_menu,menu);
+        inflater.inflate(R.menu.dashbord_menu, menu);
         return true;
     }
 
-    /*@Override
+    @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         finish();
         return true;
-    }*/
+    }
 
 }
 

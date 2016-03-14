@@ -1,13 +1,13 @@
 package br.aeso.boaviagem;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class NovaViagemActivity extends AppCompatActivity {
+public class NovaViagemActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class NovaViagemActivity extends AppCompatActivity {
         return true;
     }
 
-    /*@Override
+    @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item){
         switch(item.getItemId()){
             case R.id.novo_gasto:
@@ -33,7 +33,7 @@ public class NovaViagemActivity extends AppCompatActivity {
                 //remover viagem do banco de dados que ainda não existe;
                 return true;
             default:
-                return super.onMenuItemSelected(featureId,item)
+                return super.onMenuItemSelected(featureId,item);
         }
-    }*/
+    }
 }

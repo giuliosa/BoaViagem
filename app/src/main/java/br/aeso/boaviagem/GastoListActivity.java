@@ -21,15 +21,16 @@ import java.util.Map;
 
 public class GastoListActivity  extends ListActivity implements AdapterView.OnItemClickListener {
     private List<Map<String, Object>> gastos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         String[] de ={"data","descricao","valor","categoria"};
         int[] para = {R.id.data, R.id.descricao,R.id.valor, R.id.categoria};
 
-        SimpleAdapter adapter = new SimpleAdapter(this,listarGastos(), R.layout.activity_gasto_list,de,para);
+        SimpleAdapter adapter = new SimpleAdapter(this,listarGastos(),
+                R.layout.activity_gasto_list,de,para);
         adapter.setViewBinder(new GastoViewBinder());
 
         setListAdapter(adapter);
