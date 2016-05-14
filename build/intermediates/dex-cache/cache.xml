@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/home/giulio/Android/BoaViagem/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/home/giulio/Android/BoaViagem/app/build/intermediates/pre-dexed/debug/classes-303a292070f96f2110d91236a8d39e2a5ca51308.jar" />
-    </item>
-    <item
         jar="/home/giulio/Android/BoaViagem/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -16,11 +9,11 @@
         <dex dex="/home/giulio/Android/BoaViagem/app/build/intermediates/pre-dexed/debug/classes-19b4bc6836c8af7aa6c7562be1f3311b51d4cb85.jar" />
     </item>
     <item
-        jar="/home/giulio/Android/BoaViagem/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="/home/giulio/Android/BoaViagem/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/home/giulio/Android/BoaViagem/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-b226bd6db9326d3cf5e65a47a722d7e863619b56.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/giulio/Android/BoaViagem/app/build/intermediates/pre-dexed/debug/classes-303a292070f96f2110d91236a8d39e2a5ca51308.jar" />
     </item>
     <item
         jar="/home/giulio/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
@@ -28,6 +21,13 @@
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
         <dex dex="/home/giulio/Android/BoaViagem/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-c88e0140843d0360476b0045f5c9a74bbd883862.jar" />
+    </item>
+    <item
+        jar="/home/giulio/Android/BoaViagem/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/giulio/Android/BoaViagem/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-b226bd6db9326d3cf5e65a47a722d7e863619b56.jar" />
     </item>
 
 </items>

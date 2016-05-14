@@ -20,7 +20,13 @@
                 android:textAppearance=
                     "?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
-
+            <TextView
+                android:id="@+id/destino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView

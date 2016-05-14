@@ -4,7 +4,8 @@
     <item
         android:id="@+id/sair"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        android:title="@string/sair">
+        android:title="@string/sair"
+        android:showAsAction="always">
 
     </item>
 </menu>

@@ -8,7 +8,7 @@
         android:title="@string/novo_gasto"/>
 
     <item
-        android:id="@+id/remover"
+        android:id="@+id/remover_viagem"
         android:icon="@android:drawable/ic_menu_delete"
         android:title="@string/remover_viagem"/>
 
