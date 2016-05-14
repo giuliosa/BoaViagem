@@ -82,13 +82,11 @@ public class NovaViagemActivity extends Activity {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        Viagem viagem = new Viagem();
-
-        viagem = dao.buscarViagemPorId(Integer.parseInt(id));
+        Viagem viagem = dao.buscarViagemPorId(Integer.parseInt(id));
 
         destino.setText(viagem.getDestino());
-        /*dataChegada = new Date(cursor.getLong(2));
-        dataSaida = new Date(cursor.getLong(3));*/
+        dataChegada = new Date(viagem.getDataChegada().getTime());
+        dataSaida = new Date(viagem.getDataSaida().getTime());
         dataChegadaButton.setText(dateFormat.format(viagem.getDataChegada()));
         dataSaidaButton.setText(dateFormat.format(viagem.getDataSaida()));
         quantidadePessoas.setText(viagem.getQuantidadePessoas().toString());
@@ -177,7 +175,7 @@ public class NovaViagemActivity extends Activity {
             viagem.setTipoViagem(Constantes.VIAGEM_NEGOCIOS);
             /*values.put("tipo_viagem", Constantes.VIAGEM_NEGOCIOS);*/
         }
-        SQLiteDatabase db = helper.getWritableDatabase();
+        /*SQLiteDatabase db = helper.getWritableDatabase();*/
         /*
         ContentValues values = new ContentValues();
         values.put("destino", destino.getText().toString());
@@ -200,6 +198,7 @@ public class NovaViagemActivity extends Activity {
             /*resultado = dao.insert("viagem", null, values);*/
             resultado = dao.inserirViagem(viagem);
         }   else {
+            Toast.makeText(this, viagem.getQuantidadePessoas(), Toast.LENGTH_SHORT).show();
             resultado = dao.editarViagem(viagem);
         }
 

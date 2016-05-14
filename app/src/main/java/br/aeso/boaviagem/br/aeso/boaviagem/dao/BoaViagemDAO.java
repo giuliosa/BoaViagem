@@ -5,12 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.ContactsContract;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import br.aeso.boaviagem.DatabaseHelper;
+import br.aeso.boaviagem.R;
 import br.aeso.boaviagem.domain.Gasto;
 import br.aeso.boaviagem.domain.Viagem;
 
@@ -49,13 +51,22 @@ public class BoaViagemDAO {
     }
 
     public Viagem buscarViagemPorId(Integer id){
-        Cursor cursor = getDatabase().query(DatabaseHelper.Viagem.TABELA,
+        /*Cursor cursor = getDatabase().query(DatabaseHelper.Viagem.TABELA,
                 DatabaseHelper.Viagem.COLUNAS,null,null,null,null,null);
         if(cursor.moveToNext()){
             Viagem viagem = criarViagem(cursor);
             cursor.close();
             return viagem;
         }
+        return null;*/
+        Cursor cursor = getDatabase().query(DatabaseHelper.Viagem.TABELA, DatabaseHelper.Viagem.COLUNAS,
+                DatabaseHelper.Viagem._ID + " = ?", new String[]{id.toString()}, null,null,null);
+        if(cursor.moveToNext()){
+            Viagem viagem = criarViagem(cursor);
+            cursor.close();
+            return viagem;
+        }
+
         return null;
     }
 
@@ -87,7 +98,7 @@ public class BoaViagemDAO {
         values.put(DatabaseHelper.Viagem.ORCAMENTO, viagem.getOrcamento());
         values.put(DatabaseHelper.Viagem.QUANTIDADE_PESSOAS, viagem.getQuantidadePessoas());
 
-        return getDatabase().update("viagem", values, "_id = ?",
+        return getDatabase().update(DatabaseHelper.Viagem.TABELA, values, "_id = ?",
                 new String[]{viagem.getId().toString()});
     }
 
