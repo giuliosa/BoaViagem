@@ -87,11 +87,12 @@ public class NovaViagemActivity extends Activity {
         destino.setText(viagem.getDestino());
         dataChegada = new Date(viagem.getDataChegada().getTime());
         dataSaida = new Date(viagem.getDataSaida().getTime());
-        dataChegadaButton.setText(dateFormat.format(viagem.getDataChegada()));
-        dataSaidaButton.setText(dateFormat.format(viagem.getDataSaida()));
-        quantidadePessoas.setText(viagem.getQuantidadePessoas().toString());
-        orcamento.setText(viagem.getOrcamento().toString());
+        dataChegadaButton.setText(dateFormat.format(dataChegada));
+        dataSaidaButton.setText(dateFormat.format(dataSaida));
+        quantidadePessoas.setText(viagem.getQuantidadePessoas() + "");
+        orcamento.setText(viagem.getOrcamento() + "");
         //cursor.close();
+        Toast.makeText(this, viagem.getDestino().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -160,6 +161,10 @@ public class NovaViagemActivity extends Activity {
 
     public void salvarViagem(View view){
         Viagem viagem = new Viagem();
+
+        if(id != null){
+            viagem.setId(Integer.parseInt(id));
+        }
         viagem.setDestino(destino.getText().toString());
         viagem.setOrcamento(Double.parseDouble(orcamento.getText().toString()));
         viagem.setQuantidadePessoas(Integer.parseInt(quantidadePessoas.getText().toString()));
@@ -198,13 +203,13 @@ public class NovaViagemActivity extends Activity {
             /*resultado = dao.insert("viagem", null, values);*/
             resultado = dao.inserirViagem(viagem);
         }   else {
-            Toast.makeText(this, viagem.getQuantidadePessoas(), Toast.LENGTH_SHORT).show();
             resultado = dao.editarViagem(viagem);
         }
 
 
         if(resultado != -1){
             Toast.makeText(this, getString(R.string.registro_salvo), Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, ViagemListActivity.class));
         }else{
             Toast.makeText(this, getString(R.string.erro_salvar), Toast.LENGTH_SHORT).show();
         }

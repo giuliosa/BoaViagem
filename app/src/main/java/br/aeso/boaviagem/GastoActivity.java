@@ -17,10 +17,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 import br.aeso.boaviagem.br.aeso.boaviagem.dao.BoaViagemDAO;
+import br.aeso.boaviagem.domain.Gasto;
 
 public class GastoActivity extends Activity {
     private Spinner categoria;
@@ -32,6 +34,7 @@ public class GastoActivity extends Activity {
     private EditText local;
     private Date data;
     private BoaViagemDAO dao;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,7 @@ public class GastoActivity extends Activity {
         dia = calendar.get(Calendar.DAY_OF_MONTH);
 
         dataGasto = (Button) findViewById(R.id.data);
-        dataGasto.setText(dia + "/" + (mes +1) + "/" + ano);
+        dataGasto.setText(dia + "/" + (mes + 1) + "/" + ano);
 
 
         ArrayAdapter<CharSequence> adapter =
@@ -63,6 +66,18 @@ public class GastoActivity extends Activity {
         valor = (EditText) findViewById(R.id.valor);
         descricao = (EditText) findViewById(R.id.descricao);
         local = (EditText) findViewById(R.id.local);
+
+        id = getIntent().getStringExtra(Constantes.VIAGEM_ID);
+
+        if(id != null || id != "1"){
+            preparaEdicao();
+        }
+    }
+
+    public void preparaEdicao(){
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
+        Gasto gasto = dao.buscarGastoPorId(Integer.parseInt(id));
     }
 
     public void selecionarData(View view){
@@ -104,5 +119,9 @@ public class GastoActivity extends Activity {
             default:
                 return super.onMenuItemSelected(featureId,item);
         }
+    }
+
+    public void registrarGasto(){
+        Gasto gasto = new Gasto();
     }
 }

@@ -42,6 +42,7 @@ public class BoaViagemDAO {
         Cursor cursor = getDatabase().query(DatabaseHelper.Viagem.TABELA,
                 DatabaseHelper.Viagem.COLUNAS,null,null,null,null,null);
         List<Viagem> viagens = new ArrayList<Viagem>();
+
         while (cursor.moveToNext()){
             Viagem viagem = criarViagem(cursor);
             viagens.add(viagem);
